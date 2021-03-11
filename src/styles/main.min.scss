@@ -77,7 +77,7 @@ code {
     flex-grow: 1;
 }
 
-img.logo {
+svg.logo {
     margin-bottom: 3em;
     width: 150px;
     margin-left: -14px;
@@ -141,7 +141,7 @@ li.social__link>a {
     transition: .15s all ease-out;
 }
 
-li.social__link>a>i {
+li.social__link>a>svg {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -466,7 +466,7 @@ section#portfolio {
         justify-content: space-between;
     }
 
-    img.logo {
+    svg.logo {
         margin: -15px 0 -31px -11px;
         z-index: 9999;
         position: relative;

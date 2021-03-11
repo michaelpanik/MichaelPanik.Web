@@ -43,7 +43,7 @@ const Header = () => {
                     {socialLinks.map(link => (
                         <li class="social__link">
                             <a href={link.url} target="_blank" rel="nofollow referrer">
-                                <i class={`fab fa-${link.icon}`}></i>
+                                {link.icon}
                                 <span class="sr-only">Follow Michael Panik on {link.label}.</span>
                             </a>
                         </li>
