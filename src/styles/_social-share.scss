@@ -1,0 +1,50 @@
+.social-share {
+    margin-bottom: 2em;
+    text-align: center;
+
+    &__link {
+        box-shadow: none;
+        color: #fff;
+        font-size: 1.5em;
+        height: 1.5em;
+        width: 1.5em;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover,
+        &:focus {
+            opacity: 0.5;
+        }
+
+        &--twitter,
+        &--twitter:hover,
+        &--twitter:focus {
+            background-color: #00acee;
+        }
+
+        &--facebook,
+        &--facebook:hover,
+        &--facebook:focus {
+            background-color: #3b5998;
+        }
+
+        &--linkedin,
+        &--linkedin:hover,
+        &--linkedin:focus {
+            background-color: #0072b1;
+        }
+        
+        &--reddit,
+        &--reddit:hover,
+        &--reddit:focus {
+            background-color: #FF4301;
+        }
+
+        &--email,
+        &--email:hover,
+        &--email:focus {
+            background-color: #751FDE;
+        }
+    }
+}
