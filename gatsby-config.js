@@ -22,7 +22,7 @@ module.exports = {
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    `gatsby-plugin-netlify-cms`
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -30,6 +30,14 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        typekit: {
+          id: process.env.TYPEKIT_ID,
+        },
+      },
     },
   ],
 };
