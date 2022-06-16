@@ -1,6 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
-import Logo from "../Logo";
+import { Logo } from "../Logo";
 import { HeaderFooter, HeaderNavigation, HeaderNavigationToggle } from "./";
 
 const Header = () => {
