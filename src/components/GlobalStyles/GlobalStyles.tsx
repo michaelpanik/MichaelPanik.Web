@@ -1,3 +1,4 @@
+import React from "react";
 import { Global } from "@emotion/react";
 import { GlobalStyles as TWGlobalStyles } from "twin.macro";
 import { customGlobalStyles } from "./";

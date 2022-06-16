@@ -6,7 +6,6 @@ module.exports = {
     siteUrl: "https://michael-panik.com",
   },
   plugins: [
-    "gatsby-plugin-sass",
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-google-analytics",
@@ -49,6 +48,6 @@ module.exports = {
         overlayDrafts: process.env.NODE_ENV === "development",
       },
     },
-    `gatbsy-plugin-emotion`,
+    `gatsby-plugin-emotion`,
   ],
 };
