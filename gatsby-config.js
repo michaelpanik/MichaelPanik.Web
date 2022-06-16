@@ -1,5 +1,6 @@
-require("dotenv").config();
-
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 module.exports = {
   siteMetadata: {
     title: "Michael Panik",
@@ -42,10 +43,17 @@ module.exports = {
     {
       resolve: `gatsby-source-sanity`,
       options: {
-        projectId: `uhgfo9o9`,
-        dataset: `production`,
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
         token: process.env.SANITY_TOKEN,
         overlayDrafts: process.env.NODE_ENV === "development",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sanity-image`,
+      options: {
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
       },
     },
     `gatsby-plugin-emotion`,
