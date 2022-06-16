@@ -1,10 +1,11 @@
+require("dotenv").config();
+
 module.exports = {
   siteMetadata: {
     title: "Michael Panik",
-    siteUrl: 'https://michael-panik.com'
+    siteUrl: "https://michael-panik.com",
   },
   plugins: [
-    "gatsby-plugin-netlify-cms",
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     {
@@ -23,7 +24,6 @@ module.exports = {
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    `gatsby-plugin-netlify-cms`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -40,5 +40,15 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: `uhgfo9o9`,
+        dataset: `production`,
+        token: process.env.SANITY_TOKEN,
+        overlayDrafts: process.env.NODE_ENV === "development",
+      },
+    },
+    `gatbsy-plugin-emotion`,
   ],
 };
