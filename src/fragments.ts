@@ -1,15 +1,34 @@
 import { graphql } from "gatsby";
 
-export const AuthorFragment = graphql`
-  fragment SanityAuthorFragment on SanityAuthor {
-    name
-    image {
-      asset {
-        gatsbyImageData
+export const ImageFragment = graphql`
+  fragment SanityGatsbyImage on SanityImage {
+    asset {
+      gatsbyImageData
+      _id
+      metadata {
+        preview: lqip
+        palette {
+          dominant {
+            background
+          }
+        }
+        dimensions {
+          height
+          width
+        }
       }
     }
-    bio {
-      ...SanityBlockFragment
+    hotspot {
+      height
+      width
+      x
+      y
+    }
+    crop {
+      bottom
+      left
+      right
+      top
     }
   }
   `
@@ -17,34 +36,7 @@ export const AuthorFragment = graphql`
 export const ImageWithAltFragment = graphql`
 fragment SanityImageWithAltAndCaptionFragment on SanityImageWithAltAndCaption {
     mainImage {
-      asset {
-        gatsbyImageData
-        _id
-        metadata {
-          preview: lqip
-          palette {
-            dominant {
-              background
-            }
-          }
-          dimensions {
-            height
-            width
-          }
-        }
-      }
-      hotspot {
-        height
-        width
-        x
-        y
-      }
-      crop {
-        bottom
-        left
-        right
-        top
-      }
+      ...SanityGatsbyImage
     }
     alt
     caption
@@ -57,9 +49,6 @@ export const PostFragment = graphql`
     mainImage {
       ...SanityImageWithAltAndCaptionFragment
     }
-    author {
-      ...SanityAuthorFragment
-    }
     categories {
       title
     }
@@ -67,17 +56,14 @@ export const PostFragment = graphql`
       current
     }
     publishedAt
-    body {
-      ...SanityBlockFragment
-    }
+    body: _rawBody(resolveReferences: {maxDepth: 10})
   }
   `
 
-export const BlockFragment = graphql`
-  fragment SanityBlockFragment on SanityBlock {
-    children {
-      text
-    }
+export const PortfolioFragment = graphql`
+  fragment SanityPortfolioFragment on SanityPortfolio {
+    title
+
   }
   `
 

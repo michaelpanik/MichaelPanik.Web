@@ -1,6 +1,8 @@
 import { Link } from "gatsby";
 import React from "react";
+import tw from "twin.macro";
 import useNavigation from "../../hooks/useNavigation";
+import { StyledLink } from "../Link";
 
 const HeaderNavigation = () => {
   const navItems = useNavigation();
@@ -10,7 +12,13 @@ const HeaderNavigation = () => {
       <ul>
         {navItems.map((item) => (
           <li>
-            <Link to={item.url}>{item.label}</Link>
+            <StyledLink
+              href={item.url}
+              css={[tw`inline-block text-lg mb-6`]}
+              dark
+            >
+              {item.label}
+            </StyledLink>
           </li>
         ))}
       </ul>

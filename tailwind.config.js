@@ -3,10 +3,14 @@ module.exports = {
   content: [],
   theme: {
     extend: {
+      fontFamily: {
+        display: "filson-pro",
+        mono: "roboto-mono",
+      },
       colors: {
         primary: "#5ee2c3",
         secondary: "#751fde",
-        black: "#212827",
+        gray: { 1000: "#212827" },
       },
     },
   },
