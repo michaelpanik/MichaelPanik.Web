@@ -18,7 +18,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   posts.data.allSanityPost.nodes.forEach((post) => {
     createPage({
-      path: `blog/${post?.slug?.current}/`,
+      path: `blog/${post?.slug?.current || post?.id}/`,
       component: path.resolve(`./src/templates/post.tsx`),
       context: post,
     });
@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   portfolioItems.data.allSanityPortfolio.nodes.forEach((portfolioItem) => {
     createPage({
-      path: `portfolio/${portfolioItem?.slug?.current}`,
+      path: `portfolio/${portfolioItem?.slug?.current || post?.id}`,
       component: path.resolve(`./src/templates/portfolio.tsx`),
       context: portfolioItem,
     });
