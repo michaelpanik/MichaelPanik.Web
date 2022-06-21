@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   portfolioItems.data.allSanityPortfolio.nodes.forEach((portfolioItem) => {
     createPage({
-      path: `portfolio/${portfolioItem?.slug?.current || post?.id}`,
+      path: `portfolio/${portfolioItem?.slug?.current || portfolioItem?.id}`,
       component: path.resolve(`./src/templates/portfolio.tsx`),
       context: portfolioItem,
     });
