@@ -24,26 +24,27 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  const portfolioItems = await graphql(`
-    {
-      allSanityPortfolio {
-        nodes {
-          id
-          slug {
-            current
-          }
-        }
-      }
-    }
-  `);
+  // const portfolioItems = await graphql(`
+  //   {
+  //     allSanityPortfolio {
+  //       nodes {
+  //         id
+  //         slug {
+  //           current
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
 
-  portfolioItems.data.allSanityPortfolio.nodes.forEach((portfolioItem) => {
-    createPage({
-      path: `portfolio/${portfolioItem.slug.current || portfolioItem.id}/`,
-      component: path.resolve(`./src/templates/portfolio.tsx`),
-      context: portfolioItem,
-    });
-  });
+  // portfolioItems.data.allSanityPortfolio.nodes.forEach((portfolioItem) => {
+  //   createPage({
+  //     path: `portfolio/${portfolioItem.slug.current || portfolioItem.id}/`,
+  //     component: path.resolve(`./src/templates/portfolio.tsx`),
+  //     context: portfolioItem,
+  //   });
+  // });
 
-  return Promise.all([posts, portfolioItems]);
+  // return Promise.all([posts, portfolioItems]);
+  return Promise.all([posts]);
 };
