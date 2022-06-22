@@ -11,7 +11,7 @@ const Layout = ({ noPadding = false, children, ...remainingProps }) => {
       <main
         css={[
           tw`px-8 py-12 lg:(relative px-14 pt-32 pb-16 col-span-4)`,
-          noPadding && tw`p-0`,
+          noPadding && tw`p-0 lg:(p-0)`,
         ]}
       >
         {children}

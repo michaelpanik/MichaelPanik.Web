@@ -33,7 +33,12 @@ const PortfolioPage = ({ data }) => {
             <Link
               to={`/portfolio/${slug?.current}`}
               css={[
-                tw`absolute block p-8 bg-white right-8 bottom-8 w-1/2 rounded-lg transition hover:(shadow-xl -translate-y-2) focus:(shadow-xl -translate-y-2)`,
+                tw`absolute block p-8 bg-white rounded-lg transition bottom-0 right-0 m-4
+                lg:(w-3/4 right-8 bottom-8 m-0)
+                xl:(w-1/2 )
+                hover:(shadow-xl -translate-y-2)
+                focus:(shadow-xl -translate-y-2)
+                `,
               ]}
             >
               <h2 css={[tw`mb-4`]}>{title}</h2>

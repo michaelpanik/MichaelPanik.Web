@@ -25,7 +25,7 @@ export const components = {
     blockquote: ({ children, value }) => (
       <>
         <div css={[tw`border-2 mx-auto w-1/12 mb-12 mt-24`]} />
-        <blockquote css={[tw`mx-auto text-center w-5/12`]}>
+        <blockquote css={[tw`mx-auto text-center lg:(w-5/12)`]}>
           <p css={[tw`text-5xl mb-8 font-display`]}>&ldquo;{children}&rdquo;</p>
           <cite css={[tw`not-italic`]}>{value.cite}</cite>
         </blockquote>
