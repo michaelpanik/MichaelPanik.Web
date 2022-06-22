@@ -6,6 +6,17 @@ import { HeaderFooter, HeaderNavigation, HeaderNavigationToggle } from "./";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+
+  const toggleOpen = () => {
+    if (open) {
+      setOpen(false);
+      if (document) document.body.style.overflow = "auto";
+    } else {
+      setOpen(true);
+      if (document) document.body.style.overflow = "hidden";
+    }
+  };
+
   return (
     <header
       css={[
@@ -22,7 +33,7 @@ const Header = () => {
           />
         </Link>
         <HeaderNavigation open={open} />
-        <HeaderNavigationToggle onClick={() => setOpen(!open)} />
+        <HeaderNavigationToggle onClick={toggleOpen} />
       </main>
       <HeaderFooter css={[tw`hidden lg:(block)`]} />
     </header>

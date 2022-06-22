@@ -38,7 +38,7 @@ const BlogArchivePage = ({ data }) => {
 
   return (
     <Layout>
-      <div css={[tw`flex justify-between`]}>
+      <div css={[tw`lg:(flex justify-between)`]}>
         <h1 css={[tw`mb-12`]}>Blog</h1>
         <div>
           {["All", ...categories].map((category) => (
@@ -54,7 +54,7 @@ const BlogArchivePage = ({ data }) => {
           ))}
         </div>
       </div>
-      <div css={[tw`grid grid-cols-3 col-gap-6 row-gap-24`]}>
+      <div css={[tw`grid lg:(grid-cols-3) col-gap-6 row-gap-24`]}>
         {filteredPosts.map((post) => {
           return <BlogList {...post} />;
         })}
