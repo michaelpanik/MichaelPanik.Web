@@ -1,22 +1,30 @@
 import { Link } from "gatsby";
-import React from "react";
+import React, { useState } from "react";
 import tw from "twin.macro";
 import { Logo } from "../Logo";
 import { HeaderFooter, HeaderNavigation, HeaderNavigationToggle } from "./";
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
   return (
     <header
-      css={[tw`flex flex-col bg-primary px-14 py-14 h-screen sticky top-0`]}
+      css={[
+        tw`flex bg-primary p-6 lg:(flex-col px-14 py-14 h-screen sticky top-0 z-50)`,
+      ]}
     >
-      <main css={[tw`flex-1`]}>
+      <main
+        css={[tw`flex w-full justify-between items-center lg:(flex-1 block)`]}
+      >
         <Link to="/">
-          <Logo alt="Michael Panik's logo" css={[tw`w-40 -ml-3 mb-12`]} />
+          <Logo
+            alt="Michael Panik's logo"
+            css={[tw`w-24 relative z-50 lg:(w-40 -ml-3 mb-12)`]}
+          />
         </Link>
-        <HeaderNavigation />
-        <HeaderNavigationToggle />
+        <HeaderNavigation open={open} />
+        <HeaderNavigationToggle onClick={() => setOpen(!open)} />
       </main>
-      <HeaderFooter />
+      <HeaderFooter css={[tw`hidden lg:(block)`]} />
     </header>
   );
 };

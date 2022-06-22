@@ -5,7 +5,7 @@ import { Header } from "../Header";
 
 const Layout = ({ noPadding = false, children, ...remainingProps }) => {
   return (
-    <div css={[tw`grid grid-cols-5 `]} {...remainingProps}>
+    <div css={[tw`lg:(grid grid-cols-5)`]} {...remainingProps}>
       <GlobalStyles />
       <Header />
       <main

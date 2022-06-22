@@ -2,11 +2,11 @@ import React from "react";
 import tw from "twin.macro";
 import useSocialLinks from "../../hooks/useSocialLinks";
 
-const HeaderFooter = () => {
+const HeaderFooter = ({ ...remainingProps }) => {
   const socialLinks = useSocialLinks();
 
   return (
-    <footer>
+    <footer {...remainingProps}>
       <ul css={[tw`flex justify-between items-center mb-8`]}>
         {socialLinks.map((link) => (
           <li>
