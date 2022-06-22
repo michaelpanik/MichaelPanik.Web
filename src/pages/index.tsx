@@ -19,7 +19,7 @@ const HomePage = ({ data }) => {
             </sup>{" "}
             {heading}
           </h1>
-          <PortableText blocks={subheading} components={components} />
+          <PortableText value={subheading} components={components} />
         </div>
       </section>
       {heroImage && (
