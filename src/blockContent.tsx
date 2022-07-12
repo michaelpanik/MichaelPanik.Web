@@ -1,6 +1,7 @@
 import React from "react";
 import tw from "twin.macro";
 import { StyledLink } from "./components/Link";
+import { CodeBlock } from "./components/CodeBlock";
 
 export const components = {
   block: {
@@ -32,5 +33,8 @@ export const components = {
         <div css={[tw`border-2 mx-auto w-1/12 mt-12 mb-24`]} />
       </>
     ),
+  },
+  types: {
+    code: CodeBlock,
   },
 };

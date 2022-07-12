@@ -6,9 +6,11 @@ import { Layout } from "../components/Layout";
 import { formatDate } from "../helpers";
 import { PortableText } from "@portabletext/react";
 import { components } from "../blockContent";
+import { Disqus } from "gatsby-plugin-disqus";
 
-const BlogDetail = ({ data }) => {
-  const { title, mainImage, categories, publishedAt, body } = data.sanityPost;
+const BlogDetail = ({ data, location }) => {
+  const { id, title, mainImage, categories, publishedAt, body, slug } =
+    data.sanityPost;
   return (
     <Layout noPadding>
       {mainImage ? (
@@ -18,12 +20,12 @@ const BlogDetail = ({ data }) => {
           height={800}
           alt={mainImage.alt}
           config={{ quality: 95 }}
-          css={[tw`w-full h-[100vh] object-cover`]}
+          css={[tw`w-full object-cover h-[65vh] lg:(h-screen)`]}
         />
       ) : (
-        <div css={[tw`w-full h-1/2 bg-gray-200`]} />
+        <div css={[tw`w-full bg-gray-200 h-[65vh] lg:(h-screen)`]} />
       )}
-      <div css={[tw`-mt-80 mx-14 bg-white relative z-10 p-14`]}>
+      <div css={[tw`-mt-80 mx-14 bg-white relative z-10 px-6 py-12 lg:(p-14)`]}>
         {/* <small css={[tw`absolute bottom-[100%] left-0 text-xs py-2`]}>
           {mainImage.caption}
         </small> */}
@@ -33,6 +35,13 @@ const BlogDetail = ({ data }) => {
           {categories.map((category) => category.title).join(",")}
         </p>
         <PortableText value={body} components={components} />
+        <Disqus
+          config={{
+            url: `blog/${location.pathname}`,
+            identifier: id,
+            title: title,
+          }}
+        />
       </div>
     </Layout>
   );

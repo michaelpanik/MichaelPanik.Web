@@ -11,23 +11,27 @@ const HeaderNavigation = ({ open }) => {
   return (
     <nav
       css={[
-        tw`opacity-0 fixed top-0 left-0 bg-primary w-screen h-screen flex items-center justify-center text-center z-40
-        lg:(block opacity-100 static w-full h-auto bg-transparent text-left)`,
-        open && tw`opacity-100`,
+        tw`opacity-0 fixed top-0 left-0 bg-primary w-screen h-screen flex items-center justify-center text-center z-40 pointer-events-none
+        lg:(block opacity-100 static w-full h-auto bg-transparent text-left pointer-events-auto)`,
+        open && tw`opacity-100 pointer-events-auto`,
       ]}
     >
       <ul>
-        {navItems.map((item) => (
-          <li>
-            <StyledLink
-              href={item.url}
-              css={[tw`inline-block text-lg mb-6`]}
-              dark
-            >
-              {item.label}
-            </StyledLink>
-          </li>
-        ))}
+        {navItems.map((item) => {
+          const active = location.pathname.includes(item.url);
+          return (
+            <li>
+              <StyledLink
+                href={item.url}
+                css={[tw`inline-block text-lg mb-6`]}
+                dark
+                active={active}
+              >
+                {item.label}
+              </StyledLink>
+            </li>
+          );
+        })}
       </ul>
       <HeaderFooter
         css={[tw`absolute bottom-0 left-0 w-full px-12 pb-6 lg:(hidden)`]}

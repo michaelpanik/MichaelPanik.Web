@@ -2,13 +2,16 @@ import styled from "@emotion/styled";
 import tw from "twin.macro";
 import { Link } from "gatsby";
 
-const StyledLinkA = styled.a(({ primary, dark, inverse }) => [
+const StyledLinkA = styled.a(({ primary, dark, inverse, active }) => [
   tw`transition duration-150`,
   dark &&
     `&:hover,
   &:focus {
     box-shadow: inset 0 0 #fff,inset 0 -.65em rgba(0, 138, 113, .51);
   }`,
+  dark &&
+    active &&
+    `box-shadow: inset 0 0 #fff,inset 0 -.65em rgba(0, 138, 113, .51);`,
   primary &&
     `box-shadow: inset 0 0 #fff,inset 0 -.45em rgba(102,230,207,.7);
 
