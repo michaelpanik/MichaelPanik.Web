@@ -37,8 +37,6 @@
     "gatsby-source-filesystem": "^4.16.0",
     "gatsby-source-sanity": "^7.4.2",
     "gatsby-transformer-sharp": "^4.16.0",
-    "os-browserify": "^0.3.0",
-    "path-browserify": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",

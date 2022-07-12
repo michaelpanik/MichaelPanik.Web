@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (document) {
+    if (typeof document !== "undefined") {
       if (open) {
         document.body.style.overflow = "hidden";
       } else {

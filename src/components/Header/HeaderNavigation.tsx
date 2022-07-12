@@ -18,7 +18,10 @@ const HeaderNavigation = ({ open }) => {
     >
       <ul>
         {navItems.map((item) => {
-          const active = location.pathname.includes(item.url);
+          let active;
+          if (typeof window !== "undefined") {
+            active = window.location.pathname.includes(item.url);
+          }
           return (
             <li>
               <StyledLink
