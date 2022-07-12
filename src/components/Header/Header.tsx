@@ -1,5 +1,5 @@
 import { Link } from "gatsby";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import tw from "twin.macro";
 import { Logo } from "../Logo";
 import { HeaderFooter, HeaderNavigation, HeaderNavigationToggle } from "./";
@@ -10,12 +10,20 @@ const Header = () => {
   const toggleOpen = () => {
     if (open) {
       setOpen(false);
-      if (document) document.body.style.overflow = "auto";
     } else {
       setOpen(true);
-      if (document) document.body.style.overflow = "hidden";
     }
   };
+
+  useEffect(() => {
+    if (document) {
+      if (open) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+    }
+  }, [open]);
 
   return (
     <header

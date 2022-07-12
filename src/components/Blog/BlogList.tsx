@@ -2,8 +2,9 @@ import React from "react";
 import Image from "gatsby-plugin-sanity-image";
 import { formatDate } from "../../helpers";
 import tw from "twin.macro";
+import { Link } from "../Link";
 
-const BlogList = ({ mainImage, title, publishedAt, slug }) => {
+const BlogList = ({ mainImage, title, publishedAt, slug, categories }) => {
   return (
     <a
       href={`/blog/${slug.current}`}
@@ -31,7 +32,10 @@ const BlogList = ({ mainImage, title, publishedAt, slug }) => {
             {title}
           </span>
         </h2>
-        <time css={[tw`text-gray-400 text-xs`]}>{formatDate(publishedAt)}</time>
+        <div css={[tw`text-gray-400 text-xs flex justify-between`]}>
+          <span>{categories[0].title}</span>
+          <time>{formatDate(publishedAt)}</time>
+        </div>
       </div>
     </a>
   );

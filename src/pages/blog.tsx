@@ -3,8 +3,11 @@ import React, { useEffect, useState } from "react";
 import { Layout } from "../components/Layout";
 import { BlogList } from "../components/Blog";
 import tw from "twin.macro";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const BlogArchivePage = ({ data }) => {
+  const [categoriesListOpen, setCategoriesListOpen] = useState<boolean>(false);
   const sortByPublishedDate = (a, b) =>
     new Date(a.publishedAt).getTime() > new Date(b.publishedAt).getTime()
       ? -1
@@ -37,21 +40,38 @@ const BlogArchivePage = ({ data }) => {
   }, [filter]);
 
   return (
-    <Layout>
-      <div css={[tw`lg:(flex justify-between)`]}>
-        <h1 css={[tw`mb-12`]}>Blog</h1>
-        <div>
-          {["All", ...categories].map((category) => (
-            <button
-              onClick={() => setFilter(category)}
-              css={[
-                tw`text-sm ml-6`,
-                filter === category && tw`font-bold text-secondary`,
-              ]}
-            >
-              {category}
-            </button>
-          ))}
+    <Layout fluid>
+      <div css={[tw`flex justify-between items-center mb-12`]}>
+        <h1>Blog</h1>
+        <div css={[tw`relative`]}>
+          <button
+            css={[tw`lg:(hidden)`]}
+            onClick={() => setCategoriesListOpen(!categoriesListOpen)}
+          >
+            Categories <FontAwesomeIcon icon={faChevronDown} />
+          </button>
+          <div
+            css={[
+              tw`pointer-events-none opacity-0 transform translate-y-4 transition absolute flex flex-col right-0 top-[100%] bg-white z-40 p-4 rounded-lg shadow-lg w-60 lg:(w-auto opacity-100 block static bg-none shadow-none p-0 translate-y-0)`,
+              categoriesListOpen &&
+                tw`opacity-100 translate-y-0 pointer-events-auto`,
+            ]}
+          >
+            {["All", ...categories].map((category) => (
+              <button
+                onClick={() => {
+                  setFilter(category);
+                  setCategoriesListOpen(false);
+                }}
+                css={[
+                  tw`text-left py-2 lg:(text-sm ml-6 p-0)`,
+                  filter === category && tw`font-bold text-secondary`,
+                ]}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
       <div css={[tw`grid lg:(grid-cols-3) col-gap-6 row-gap-24`]}>

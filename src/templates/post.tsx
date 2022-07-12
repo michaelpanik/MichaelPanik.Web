@@ -29,19 +29,21 @@ const BlogDetail = ({ data, location }) => {
         {/* <small css={[tw`absolute bottom-[100%] left-0 text-xs py-2`]}>
           {mainImage.caption}
         </small> */}
-        <h1 css={[tw`text-center mb-8`]}>{title}</h1>
-        <p css={[tw`text-center text-gray-600 mb-14`]}>
-          {formatDate(publishedAt)} |{" "}
-          {categories.map((category) => category.title).join(",")}
-        </p>
-        <PortableText value={body} components={components} />
-        <Disqus
-          config={{
-            url: `blog/${location.pathname}`,
-            identifier: id,
-            title: title,
-          }}
-        />
+        <div css={[tw`max-w-3xl mx-auto`]}>
+          <h1 css={[tw`text-center mb-8`]}>{title}</h1>
+          <p css={[tw`text-center text-gray-600 mb-14`]}>
+            {formatDate(publishedAt)} |{" "}
+            {categories.map((category) => category.title).join(",")}
+          </p>
+          <PortableText value={body} components={components} />
+          <Disqus
+            config={{
+              url: `blog/${location.pathname}`,
+              identifier: id,
+              title: title,
+            }}
+          />
+        </div>
       </div>
     </Layout>
   );
