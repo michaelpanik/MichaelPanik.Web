@@ -2,6 +2,10 @@ import React from "react";
 import tw from "twin.macro";
 import { GlobalStyles } from "../GlobalStyles";
 import { Header } from "../Header";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+
+config.autoAddCss = false;
 
 const Layout = ({
   noPadding = false,

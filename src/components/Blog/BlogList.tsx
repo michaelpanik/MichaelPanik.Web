@@ -16,7 +16,7 @@ const BlogList = ({ mainImage, title, publishedAt, slug, categories }) => {
         {mainImage && (
           <Image
             {...mainImage.mainImage}
-            css={[tw`w-full`]}
+            css={[tw`w-full h-48 object-cover`]}
             width={800}
             height={450}
           />

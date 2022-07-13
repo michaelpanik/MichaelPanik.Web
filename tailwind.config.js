@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: "filson-pro",
-        mono: "roboto-mono",
+        display: ["filson-pro", "Trebuchet MS", "Helvetica", "sans-serif"],
+        mono: ["roboto-mono", "Courier New", "Courier", "monospace"],
       },
       colors: {
         primary: "#5ee2c3",
