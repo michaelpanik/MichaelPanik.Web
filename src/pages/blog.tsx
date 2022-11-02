@@ -52,7 +52,7 @@ const BlogArchivePage = ({ data }) => {
           </button>
           <div
             css={[
-              tw`pointer-events-none opacity-0 transform translate-y-4 transition absolute flex flex-col right-0 top-[100%] bg-white z-40 p-4 rounded-lg shadow-lg w-60 lg:(w-auto opacity-100 block static bg-none shadow-none p-0 translate-y-0)`,
+              tw`pointer-events-none md:pointer-events-auto opacity-0 transform translate-y-4 transition absolute flex flex-col right-0 top-[100%] bg-white z-40 p-4 rounded-lg shadow-lg w-60 lg:(w-auto opacity-100 block static bg-none shadow-none p-0 translate-y-0)`,
               categoriesListOpen &&
                 tw`opacity-100 translate-y-0 pointer-events-auto`,
             ]}
