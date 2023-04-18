@@ -17,6 +17,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   posts.data.allSanityPost.nodes.forEach((post) => {
+    if (post?.)
     createPage({
       path: `blog/${post?.slug?.current || post?.id}/`,
       component: path.resolve(`./src/templates/post.tsx`),
