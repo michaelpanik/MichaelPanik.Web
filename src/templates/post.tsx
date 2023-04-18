@@ -38,7 +38,7 @@ const BlogDetail = ({ data, location }) => {
           <PortableText value={body} components={components} />
           <Disqus
             config={{
-              url: `blog/${location.pathname}`,
+              url: `https://michael-panik.com${location.pathname}`,
               identifier: id,
               title: title,
             }}
