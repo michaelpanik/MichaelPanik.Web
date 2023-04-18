@@ -25,7 +25,7 @@ const BlogDetail = ({ data, location }) => {
       ) : (
         <div css={[tw`w-full bg-gray-200 h-[65vh] lg:(h-screen)`]} />
       )}
-      <div css={[tw`-mt-80 mx-14 bg-white relative z-10 px-6 py-12 lg:(p-14)`]}>
+      <div css={[tw`-mt-80 mx-14 bg-white relative z-10 px-6 py-12 lg:(p-20)`]}>
         {/* <small css={[tw`absolute bottom-[100%] left-0 text-xs py-2`]}>
           {mainImage.caption}
         </small> */}
