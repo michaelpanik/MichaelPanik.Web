@@ -11,6 +11,14 @@ export const components = {
     ),
     normal: ({ children }) => <p css={[tw`mb-8 leading-loose `]}>{children}</p>,
   },
+  list: {
+    bullet: ({ children, value }) => (
+      <ul css={[tw`list-disc pl-8 leading-8`]}>{children}</ul>
+    ),
+    number: ({ children, value }) => (
+      <ol css={[tw`list-decimal pl-8 leading-8`]}>{children}</ol>
+    ),
+  },
   marks: {
     big: ({ children, value }) => <big css={[tw`text-2xl`]}>{children}</big>,
     link: ({ children, value }) => (
