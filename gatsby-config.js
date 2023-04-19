@@ -4,8 +4,11 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "Michael Panik",
+    title: "Michael Panik | I use computers to solve problems.",
     siteUrl: "https://michael-panik.com",
+    description: "I'm Michael Panik. I use computers to solve problems.",
+    twitterUsername: "@michaelpanik",
+    image: "",
   },
   plugins: [
     "gatsby-plugin-image",

@@ -5,6 +5,7 @@ import React from "react";
 import tw from "twin.macro";
 import { Layout } from "../components/Layout";
 import { StyledLink } from "../components/Link";
+import SEO from "../components/Seo";
 
 const Projects = ({ data }) => {
   const projects = data.allSanityProject.nodes;
@@ -33,6 +34,8 @@ const Projects = ({ data }) => {
     </Layout>
   );
 };
+
+export const Head = () => <SEO title="Projects" />;
 
 export const query = graphql`
   {

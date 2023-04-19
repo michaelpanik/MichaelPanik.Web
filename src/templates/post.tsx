@@ -7,6 +7,7 @@ import { formatDate } from "../helpers";
 import { PortableText } from "@portabletext/react";
 import { components } from "../blockContent";
 import { Disqus } from "gatsby-plugin-disqus";
+import SEO from "../components/Seo";
 
 const BlogDetail = ({ data, location }) => {
   const { id, title, mainImage, categories, publishedAt, body, slug } =
@@ -46,6 +47,17 @@ const BlogDetail = ({ data, location }) => {
         </div>
       </div>
     </Layout>
+  );
+};
+
+export const Head = ({ data }) => {
+  const { id, title, mainImage, categories, publishedAt, body, slug } =
+    data.sanityPost;
+  return (
+    <SEO
+      title={title}
+      image={mainImage.mainImage.asset.gatsbyImageData.images.fallback.src}
+    />
   );
 };
 

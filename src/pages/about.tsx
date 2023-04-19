@@ -4,6 +4,7 @@ import React from "react";
 import tw from "twin.macro";
 import { Layout } from "../components/Layout";
 import { components } from "../blockContent";
+import SEO from "../components/Seo";
 
 const AboutPage = ({ data }) => {
   const { title, body } = data?.sanityAboutMePage;
@@ -13,6 +14,11 @@ const AboutPage = ({ data }) => {
       <PortableText value={body} components={components} />
     </Layout>
   );
+};
+
+export const Head = ({ data }) => {
+  const { title } = data?.sanityAboutMePage;
+  return <SEO title={title} />;
 };
 
 export const query = graphql`

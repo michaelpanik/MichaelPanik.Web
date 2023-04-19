@@ -3,6 +3,7 @@ import Image from "gatsby-plugin-sanity-image";
 import React from "react";
 import tw from "twin.macro";
 import { Layout } from "../components/Layout";
+import SEO from "../components/Seo";
 
 const PortfolioPage = ({ data }) => {
   const portfolioItems = data?.allSanityPortfolio?.nodes;
@@ -51,6 +52,8 @@ const PortfolioPage = ({ data }) => {
     </Layout>
   );
 };
+
+export const Head = () => <SEO title="Portfolio" />;
 
 export const data = graphql`
   {

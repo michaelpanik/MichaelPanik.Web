@@ -5,6 +5,7 @@ import tw from "twin.macro";
 import { Layout } from "../components/Layout";
 import { components } from "../blockContent";
 import { PortableText } from "@portabletext/react";
+import SEO from "../components/Seo";
 
 const HomePage = ({ data }) => {
   const { crown, heading, subheading, heroImage } = data?.sanityHomePage;
@@ -52,6 +53,8 @@ const HomePage = ({ data }) => {
     </Layout>
   );
 };
+
+export const Head = () => <SEO />;
 
 export const query = graphql`
   {

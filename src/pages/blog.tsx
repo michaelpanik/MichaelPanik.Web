@@ -5,6 +5,7 @@ import { BlogList } from "../components/Blog";
 import tw from "twin.macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import SEO from "../components/Seo";
 
 const BlogArchivePage = ({ data }) => {
   const [categoriesListOpen, setCategoriesListOpen] = useState<boolean>(false);
@@ -82,6 +83,10 @@ const BlogArchivePage = ({ data }) => {
       {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
     </Layout>
   );
+};
+
+export const Head = () => {
+  return <SEO title="Blog" />;
 };
 
 export const query = graphql`
