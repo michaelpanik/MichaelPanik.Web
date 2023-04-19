@@ -15,11 +15,7 @@ const Projects = ({ data }) => {
       <h1 css={[tw`mb-8`]}>Projects</h1>
       <p css={[tw`mb-12`]}>
         Here's a collection of small pet projects I've built, started, or
-        abandoned. Check out my more professional work over in my{" "}
-        <StyledLink href="/portfolio" primary>
-          portfolio
-        </StyledLink>
-        .
+        abandoned.
       </p>
       <ul>
         {projects.map(({ title, description, url }) => (
