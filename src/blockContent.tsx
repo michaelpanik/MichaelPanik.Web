@@ -44,5 +44,6 @@ export const components = {
   },
   types: {
     code: CodeBlock,
+    image: ({ value }) => <img src={value.asset.url} css={[tw`mb-24`]} />,
   },
 };
