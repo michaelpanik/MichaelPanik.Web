@@ -33,12 +33,16 @@ export const components = {
     ),
     blockquote: ({ children, value }) => (
       <>
-        <div css={[tw`border-2 mx-auto w-1/12 mb-12 mt-24`]} />
+        <div css={[tw`border-2 mx-auto w-1/12 mb-6 mt-12 md:mb-12 md:mt-24`]} />
         <blockquote css={[tw`mx-auto text-center lg:(w-3/4)`]}>
-          <p css={[tw`text-5xl mb-8 font-display`]}>&ldquo;{children}&rdquo;</p>
+          <p css={[tw`text-3xl sm:text-5xl mb-8 font-display`]}>
+            &ldquo;{children}&rdquo;
+          </p>
           <cite css={[tw`not-italic`]}>{value.cite}</cite>
         </blockquote>
-        <div css={[tw`border-2 mx-auto w-1/12 mt-12 mb-24`]} />
+        <div
+          css={[tw`border-2 mx-auto w-1/12  mb-12 mt-6 md:mt-12 md:mb-24`]}
+        />
       </>
     ),
   },

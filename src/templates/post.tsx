@@ -21,12 +21,16 @@ const BlogDetail = ({ data, location }) => {
           height={800}
           alt={mainImage.alt}
           config={{ quality: 95 }}
-          css={[tw`w-full object-cover h-[65vh] lg:(h-screen)`]}
+          css={[tw`w-full object-cover h-60 md:h-[65vh] lg:(h-screen)`]}
         />
       ) : (
         <div css={[tw`w-full bg-gray-200 h-[65vh] lg:(h-screen)`]} />
       )}
-      <div css={[tw`-mt-80 mx-14 bg-white relative z-10 px-6 py-12 lg:(p-20)`]}>
+      <div
+        css={[
+          tw`md:-mt-80 sm:mx-14 bg-white relative z-10 px-6 py-12 lg:(p-20)`,
+        ]}
+      >
         {/* <small css={[tw`absolute bottom-[100%] left-0 text-xs py-2`]}>
           {mainImage.caption}
         </small> */}
