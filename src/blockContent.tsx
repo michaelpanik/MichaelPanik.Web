@@ -9,7 +9,13 @@ export const components = {
     h3: ({ children }) => (
       <h3 css={[tw`text-secondary mb-3 mt-8`]}>{children}</h3>
     ),
-    normal: ({ children }) => <p css={[tw`mb-8 leading-loose `]}>{children}</p>,
+    normal: ({ children }) => (
+      <p
+        css={[tw`mb-8 leading-loose md:text-xl md:leading-9 md:tracking-wide`]}
+      >
+        {children}
+      </p>
+    ),
   },
   list: {
     bullet: ({ children, value }) => (
