@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <header
       css={[
-        tw`flex bg-primary p-6 lg:(flex-col px-14 py-14 h-screen sticky top-0 z-50)`,
+        tw`flex bg-primary p-3 md:p-6 lg:(flex-col px-14 py-14 h-screen sticky top-0 z-50)`,
       ]}
     >
       <main

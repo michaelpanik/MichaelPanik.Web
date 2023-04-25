@@ -11,7 +11,7 @@ const HeaderNavigation = ({ open }) => {
   return (
     <nav
       css={[
-        tw`opacity-0 fixed top-0 left-0 bg-primary w-screen h-screen flex items-center justify-center text-center z-40 pointer-events-none
+        tw`opacity-0 fixed top-0 left-0 bg-primary w-screen h-screen flex justify-center text-center z-40 pointer-events-none pt-40
         lg:(block opacity-100 static w-full h-auto bg-transparent text-left pointer-events-auto)`,
         open && tw`opacity-100 pointer-events-auto`,
       ]}
@@ -37,7 +37,9 @@ const HeaderNavigation = ({ open }) => {
         })}
       </ul>
       <HeaderFooter
-        css={[tw`absolute bottom-0 left-0 w-full px-12 pb-6 lg:(hidden)`]}
+        css={[
+          tw`h-[30%] absolute bottom-0 left-0 w-full px-12 pb-6 lg:(hidden)`,
+        ]}
       />
     </nav>
   );
